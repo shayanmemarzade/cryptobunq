@@ -10,7 +10,9 @@
         </div>
         <div class="field">
             <label for="Password" class="block">Password</label>
-            <input id="Password" type="password" name="password" formControlName="password" pInputText class="w-full">
+            <p-password id="Password" formControlName="password" name="password" styleClass="w-full"
+                inputStyleClass="w-full">
+            </p-password>
         </div>
         <div class="field">
             <button type="submit" [disabled]="!signinForm.valid" pButton label="Submit"></button>

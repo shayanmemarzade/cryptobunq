@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder } from '@angular/forms';
 import { IUser, IUserFormGroup } from './model/user'
 import { MessageService } from 'primeng/api';
+import { SharedServiceService } from '../shared/shared-service.service';
 
 @Component({
   selector: 'app-signin',
@@ -12,7 +13,7 @@ import { MessageService } from 'primeng/api';
 export class SigninComponent implements OnInit {
   formData: IUser;
   signinForm: IUserFormGroup;
-  constructor(private formBuilder: FormBuilder, private messageService: MessageService) {
+  constructor(private formBuilder: FormBuilder, private messageService: MessageService, private sharedServiceService: SharedServiceService) {
   }
   ngOnInit(): void {
     this.signinForm = this.formBuilder.group({
@@ -27,6 +28,8 @@ export class SigninComponent implements OnInit {
       let user = this.signinForm.value;
       localStorage.setItem('fullname', user.fullname);
       localStorage.setItem('email', user.email);
+      this.sharedServiceService.addUserData(user)
+      this.signinForm.reset();
     } else {
       if (!this.signinForm.get('fullname')?.value) {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please fill Full name' });
@@ -42,6 +45,5 @@ export class SigninComponent implements OnInit {
       }
 
     }
-    // console.log(this.signinForm.value)
   }
 }

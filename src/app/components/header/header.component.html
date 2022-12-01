@@ -1,0 +1,5 @@
+<div class="card bg-cyan-100 h-4rem flex align-items-center px-5">
+    <span *ngIf="fullname" class="mr-5">{{fullname}}</span>
+    <a *ngIf="!fullname" routerLink="/signin" pButton type="button" label="Sign in" class="p-button-link p-button-sm"></a>
+    <button *ngIf="fullname" routerLink="/signin" pButton type="button" label="Logout" class="p-buttom p-button-sm" (click)="logout()"></button>
+</div>

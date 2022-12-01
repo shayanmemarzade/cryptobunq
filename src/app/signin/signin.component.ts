@@ -24,6 +24,9 @@ export class SigninComponent implements OnInit {
   signin() {
     if (this.signinForm.valid) {
       this.messageService.add({ severity: 'success', summary: 'Service Message', detail: 'Signed in successfully' });
+      let user = this.signinForm.value;
+      localStorage.setItem('fullname', user.fullname);
+      localStorage.setItem('email', user.email);
     } else {
       if (!this.signinForm.get('fullname')?.value) {
         this.messageService.add({ severity: 'error', summary: 'Error', detail: 'Please fill Full name' });

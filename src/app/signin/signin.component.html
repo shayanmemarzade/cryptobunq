@@ -1,0 +1,19 @@
+<div class="card max-w-30rem m-auto">
+    <form [formGroup]="signinForm" (ngSubmit)="signin()">
+        <div class="field">
+            <label for="Fullname" class="block">Full name</label>
+            <input id="Fullname" type="text" name="fullname" formControlName="fullname" pInputText class="w-full">
+        </div>
+        <div class="field">
+            <label for="Email">Email</label>
+            <input id="Email" type="email" name="email" formControlName="email" pInputText class="w-full">
+        </div>
+        <div class="field">
+            <label for="Password" class="block">Password</label>
+            <input id="Password" type="password" name="password" formControlName="password" pInputText class="w-full">
+        </div>
+        <div class="field">
+            <button type="submit" [disabled]="!signinForm.valid" pButton label="Submit"></button>
+        </div>
+    </form>
+</div>

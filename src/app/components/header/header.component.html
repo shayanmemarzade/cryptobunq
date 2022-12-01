@@ -1,5 +1,10 @@
 <div class="card bg-cyan-100 h-4rem flex align-items-center px-5">
-    <span *ngIf="fullname" class="mr-5">{{fullname}}</span>
-    <a *ngIf="!fullname" routerLink="/signin" pButton type="button" label="Sign in" class="p-button-link p-button-sm"></a>
-    <button *ngIf="fullname" routerLink="/signin" pButton type="button" label="Logout" class="p-buttom p-button-sm" (click)="logout()"></button>
+    <ng-container *ngIf="fullname">
+        <p-avatar [label]="fullname[0]" styleClass="mr-2" size="xlarge"></p-avatar>
+        <span class="mr-5">{{fullname}}</span>
+        <button *ngIf="fullname" routerLink="/signin" pButton type="button" label="Logout" class="p-buttom p-button-sm"
+            (click)="logout()"></button>
+    </ng-container>
+    <a *ngIf="!fullname" routerLink="/signin" pButton type="button" label="Sign in"
+        class="p-button-link p-button-sm"></a>
 </div>

@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
-
+import { AvatarModule } from 'primeng/avatar';
 @NgModule({
     declarations: [
     ],
@@ -19,7 +19,8 @@ import { ButtonModule } from 'primeng/button';
         CommonModule,
         FormsModule,
         ReactiveFormsModule,
-        ButtonModule
+        ButtonModule,
+        AvatarModule
     ]
 })
 

@@ -1,3 +1,4 @@
+<p-toast></p-toast>
 <div class="card max-w-30rem m-auto">
     <form [formGroup]="signinForm" (ngSubmit)="signin()">
         <div class="field">
@@ -15,7 +16,7 @@
             </p-password>
         </div>
         <div class="field">
-            <button type="submit" [disabled]="!signinForm.valid" pButton label="Submit"></button>
+            <button type="submit" pButton label="Submit"></button>
         </div>
     </form>
 </div>

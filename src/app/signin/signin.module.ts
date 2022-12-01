@@ -3,10 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { SigninRoutingModule } from './signin-routing.module';
 import { SigninComponent } from './signin.component';
-import { ReactiveFormsModule }    from '@angular/forms';
-import {PasswordModule} from 'primeng/password';
-import {InputTextModule} from 'primeng/inputtext';
-import {ButtonModule} from 'primeng/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from 'primeng/password';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {ButtonModule} from 'primeng/button';
     ReactiveFormsModule,
     PasswordModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    ToastModule
   ]
 })
 export class SigninModule { }
